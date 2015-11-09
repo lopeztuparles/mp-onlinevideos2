@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Standalone", "Standalone\Standalone.csproj", "{7F3403C9-EFE4-41CF-BBCF-27A8D95A998A}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -74,6 +74,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineVideos.Sites.SilentException", "SiteUtilProjects\OnlineVideos.Sites.SilentException\OnlineVideos.Sites.SilentException.csproj", "{D01E921D-961C-41E6-B8DD-B811F5BC5A76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineVideos.Sites.titof", "SiteUtilProjects\OnlineVideos.Sites.titof\OnlineVideos.Sites.titof.csproj", "{E6000721-B061-4692-9BBB-652DD9E82B34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F79A99DC-5232-4606-92C4-B16204A33401}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
