@@ -219,37 +219,21 @@ namespace OnlineVideos.Sites
             JArray tarr = (JArray)obj1["videos"];
 
             string surl = (string)tarr[2]["url"];
-            //M3U.M3U.M3UPlaylist play = new M3U.M3U.M3UPlaylist();
-            //play.Read(surl);
-            //IEnumerable<OnlineVideos.Sites.M3U.M3U.M3UComponent> telem = from item in play.OrderBy("BRANDWITH")
-            //                                                             select item;
+            M3U.M3U.M3UPlaylist play = new M3U.M3U.M3UPlaylist();
+            play.Configuration.Depth = 1;
+            play.Read(surl);
+            IEnumerable<OnlineVideos.Sites.M3U.M3U.M3UComponent> telem = from item in play.OrderBy("BRANDWITH")
+                                                                         select item;
 
-            //if (telem.Count() > 2)
-            //{
-            //    video.PlaybackOptions = new Dictionary<string, string>();
-            //    video.PlaybackOptions.Add("SD", telem.ToList()[telem.Count() - 2].Path);
-            //    video.PlaybackOptions.Add("HD", telem.ToList()[telem.Count() - 1].Path);
-            //}
-
-            string webdata = GetWebData(surl);
-            string rgxstring = @"http:\/\/(?<url>[\w.,?=\/-]*)";
-            Regex rgx = new Regex(rgxstring);
-            var tresult= rgx.Matches(webdata);
-            List<string> tUrl = new List<string>();
-            foreach (Match match in tresult) 
-            {
-                tUrl.Add( @"http://"+match.Groups["url"]);
-            }
-
-            if (tUrl.Count > 3)
+            if (telem.Count() > 3)
             {
                 video.PlaybackOptions = new Dictionary<string, string>();
-                video.PlaybackOptions.Add("SD", tUrl[tUrl.Count - 3]);
-                video.PlaybackOptions.Add("HD", tUrl[tUrl.Count - 2]);
-                video.PlaybackOptions.Add("UHD", tUrl[tUrl.Count - 1]);
+                video.PlaybackOptions.Add("HD", telem.ToList()[telem.Count() - 3].Path);
+                video.PlaybackOptions.Add("HD", telem.ToList()[telem.Count() - 2].Path);
+                video.PlaybackOptions.Add("UHD", telem.ToList()[telem.Count() - 1].Path);
             }
 
-            return tUrl[tUrl.Count -1];
+            return telem.Last().Path;
         }
 
         private List<VideoInfo> GetVideo(string webData)

@@ -121,6 +121,7 @@ namespace OnlineVideos.Sites
         public override string GetVideoUrl(VideoInfo video)
         {
             M3U.M3U.M3UPlaylist play = new M3U.M3U.M3UPlaylist();
+            play.Configuration.Depth = 1;
             play.Read(video.VideoUrl);
             IEnumerable<OnlineVideos.Sites.M3U.M3U.M3UComponent> telem = from item in play.OrderBy("BRANDWITH")
                                                                   select item;
