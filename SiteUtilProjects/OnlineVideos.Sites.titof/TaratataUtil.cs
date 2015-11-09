@@ -226,9 +226,6 @@ namespace OnlineVideos.Sites
             return listUrls;
         }
 
-       
-
-
         private class dateComparer : IComparer<RssLink> 
         {
             public int Compare(RssLink x, RssLink y) 

@@ -66,11 +66,11 @@ namespace OnlineVideos.Sites
             
         }
 
-        public override List<string> GetMultipleVideoUrls(VideoInfo video, bool inPlaylist = false)
-        {
-            return TF1Util._getVideosUrl(video);
+        //public override List<string> GetMultipleVideoUrls(VideoInfo video, bool inPlaylist = false)
+        //{
+        //    return TF1Util._getVideosUrl(video);
             
-        }
+        //}
 
         
     }

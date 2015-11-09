@@ -15,7 +15,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\Build\SiteUtilDlls\</OutputPath>
+    <OutputPath>..\..\..\..\..\ProgramData\Team MediaPortal\MP2-Client\OnlineVideos\SiteUtils\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,7 +31,27 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\ProgramData\Team MediaPortal\MP2-Client\OnlineVideos\SiteUtils\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OnlineVideos">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Team MediaPortal\MP2-Client\Plugins\OnlineVideos\OnlineVideos.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -44,12 +64,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BFMBusinessUtil.cs" />
+    <Compile Include="BFMTVUtil.cs" />
     <Compile Include="CanalPlusUtil.cs" />
     <Compile Include="AllocineUtil.cs" />
     <Compile Include="ClipzikUtil.cs" />
+    <Compile Include="D17Util.cs" />
+    <Compile Include="IteleUtil.cs" />
+    <Compile Include="M3U\M3U.cs" />
     <Compile Include="NRJ12Util.cs" />
     <Compile Include="Direct8Util.cs" />
     <Compile Include="GulliUtil.cs" />
+    <Compile Include="SokrostreamUtil.cs" />
+    <Compile Include="TVClubUtil.cs" />
     <Compile Include="TMCUtil.cs" />
     <Compile Include="PluzzUtil.cs" />
     <Compile Include="TF1Util.cs" />
@@ -58,13 +85,6 @@
     <Compile Include="TaratataUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wat.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\OnlineVideos\OnlineVideos.csproj">
-      <Project>{E0D9D390-CDD6-4B98-86F3-6EB04A958882}</Project>
-      <Name>OnlineVideos</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

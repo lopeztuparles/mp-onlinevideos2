@@ -20,6 +20,12 @@ namespace OnlineVideos.Sites
         {
             RssLink cat = new RssLink();
             cat.Url = "http://www.allocine.fr/video/bandes-annonces/";
+            cat.Name = "TV-Club";
+            cat.HasSubCategories = true;
+            Settings.Categories.Add(cat);
+
+            cat = new RssLink();
+            cat.Url = "http://www.allocine.fr/video/bandes-annonces/";
             cat.Name = "Bandes-annonces";
             cat.HasSubCategories = true;
             Settings.Categories.Add(cat);
